@@ -1,13 +1,16 @@
 import React, { Component, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image} from 'react-native';
-// import { useNavigation } from '@react-navigation/native';
 //import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from '../config/firebase';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
  
+interface LoginProps {
+  navigation: NavigationProp<ParamListBase>;
+}
 const PlaceholderImage = require('../component/image/usuario.png');
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }: LoginProps) => {
   const [nomeUsuario, setNomeUsuario] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -49,7 +52,7 @@ const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
             <Image source={PlaceholderImage} style={styles.image} />
-            <Text style={styles.titulo}>Login Aula 20/05/24</Text>
+            <Text style={styles.titulo}>Login Aula 27/08/24</Text>
       <TextInput
         style={styles.input}
         placeholder="Nome de Usuário"

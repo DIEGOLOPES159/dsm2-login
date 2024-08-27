@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image} from 'react-native';
 //import {createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../config/firebase';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
+
+interface LoginProps {
+  navigation: NavigationProp<ParamListBase>;
+}
 
 const PlaceholderImage = require('../component/image/usuario.png');
 
-const Registrar = ({navigation}) => {
+const Registrar = ({navigation}: LoginProps) => {
   const [nomeUsuario, setNomeUsuario] = useState('');
   const [telefone, setTelefone] = useState('');
   const [email, setEmail] = useState('');

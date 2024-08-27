@@ -15,7 +15,7 @@ type UserProps = {
 //  configurar  - <Stack.Screen name="Home" component={Home}/>
 const Stack = createNativeStackNavigator();
 
-export default function StackNavigator( {user:UserProps}) {
+export default function StackNavigator() {
   
   return ( 
     <Stack.Navigator screenOptions={{headerShown: false}}>
